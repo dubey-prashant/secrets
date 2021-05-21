@@ -1,8 +1,7 @@
 if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
-const session = require('express-session')
-const MongoStore = require('mongo-connect')
+const session = require('cookie-session')
 const flash = require('express-flash')
 const passport = require('passport')
 const routes = require('./routes/routes')
@@ -24,14 +23,8 @@ mongoose.connect(process.env.MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTo
 
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  cookie: {
-    secure: true,
-    maxAge: 8 * 60 * 60
-  },
-  store: MongoStore.create({
-    clientPromise,
-    dbName: 'sessions'
-  }),
+  secure: true,
+  maxAge: new Date(Date.now() + 8 * 60 * 60 * 1000),
   saveUninitialized: false,
   resave: false
 }))
