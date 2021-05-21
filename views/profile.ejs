@@ -1,0 +1,53 @@
+<%- include('partials/header') %>
+
+<style>
+  .display-3 {
+    margin: 20px auto 10px;
+  }
+
+  @media screen and (max-width: 760px) {
+    .display-3 {
+      font-size: 40px;
+    }
+
+    .logout i {
+      position: fixed;
+      bottom: 5%;
+      right: 5%;
+    }
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+    }
+
+    .username {
+      font-size: 22px;
+    }
+  }
+</style>
+
+<script>
+  alert('Make sure nobody\'s watching you right now! \n Or they\'ll know your secret.');
+</script>
+
+<div class=" text-center">
+  <div class="container ">
+    <h1 class="display-3" style="margin: 15px 0;">Your Profile</h1>
+    <img src="<%= user.profileImg %>" alt="profile-img of user" class="profile-img">
+    <p class="username"> <%= user.name %> </p>
+
+    <p>Your Email: <%= user.email %> </p>
+    <%if(user.secret){%>
+    <p>Your Secret: <%= user.secret %> </p>
+    <%} else {%>
+    <p>You haven't submitted your secret yet!</p>
+    <%}%>
+    <a class="btn btn-light btn-lg" href="/secrets" role="button">View Secrets</a>
+    <a class="btn btn-dark btn-lg" href="/submit" role="button">Submit a Secret</a>
+  </div>
+</div>
+
+<a class="logout" href="/auth/logout"><i class="fas fa-sign-out-alt"></i></a>
+
+<%- include('partials/footer') %>

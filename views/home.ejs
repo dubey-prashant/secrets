@@ -1,0 +1,22 @@
+<%- include('partials/header') %>
+
+
+<div class=" centered">
+  <div class="container">
+    <i class="fas fa-key fa-7x"></i>
+    <h1 class="display-3">Secrets</h1>
+    <p class="lead">Don't keep your secrets, share them anonymously!</p>
+    <hr>
+    <% if(isAuthenticated) {%>
+    <a class="btn btn-light btn-lg" href="/profile" role="button">View Profile</a>
+    <a class="btn btn-dark btn-lg" href="/secrets" role="button">View Secrets</a>
+    <!-- floating logout btn -->
+    <a class="logout" href="/auth/logout"><i class="fas fa-sign-out-alt"></i></a>
+    <% } else{ %>
+    <a class="btn btn-light btn-lg" href="/auth/register" role="button">Register</a>
+    <a class="btn btn-dark btn-lg" href="/auth/login" role="button">Login</a>
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

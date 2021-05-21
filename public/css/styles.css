@@ -1,0 +1,85 @@
+body {
+  background-color: #E8ECEF;
+}
+
+.centered {
+  padding-top: 200px;
+  text-align: center;
+}
+
+.secret-text {
+  text-align: center;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #000;
+}
+
+form .errorDiv {
+  color: #f33;
+  background: rgba(255, 142, 142, 0.3);
+  border: 1px solid #f00;
+  height: auto;
+}
+
+.logout {
+  color: #000;
+  font-size: 2rem;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+
+.username {
+  margin: 20px auto;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.btn-block {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media screen and (max-width:760px) {
+
+  .secret-text {
+    font-size: 1rem;
+  }
+
+  .display-3 {
+    font-size: 3rem;
+  }
+
+  .fa-7x {
+    font-size: 5rem;
+  }
+
+  .centered {
+    padding-top: 100px;
+  }
+
+  .btn-lg {
+    font-size: 1rem;
+    padding: 0.375rem 0.75rem;
+    font-weight: 600;
+    margin: 5px 0;
+  }
+
+  .btn-block {
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .logout {
+    display: inline-block;
+    font-size: 1.5rem;
+    background-color: #eee;
+    border-radius: 50%;
+  }
+}
