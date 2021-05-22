@@ -3,7 +3,6 @@ const User = require('../models/User')
 
 const Authenticated = (req, res, next) => {
   if (req.isAuthenticated()) {
-
     return next()
   }
   req.flash('error', 'You are not Authenticated. Please login to proceed!')

@@ -35,7 +35,7 @@ router.get('/google', notAuthenticated, passport.authenticate('google', {
   scope: ['profile', 'email']
 }))
 router.get('/google/redirect', passport.authenticate('google', {
-  successRedirect: '/secrets',
+  successRedirect: '/',
   failureRedirect: '/login'
 }))
 //  Google auth ends here
@@ -46,7 +46,7 @@ router.get('/facebook', notAuthenticated, passport.authenticate('facebook', {
 
 router.get('/facebook/redirect', passport.authenticate('facebook', {
   failureRedirect: '/login',
-  successRedirect: '/profile'
+  successRedirect: '/'
 }))
 //  Facebook auth ends here
 
