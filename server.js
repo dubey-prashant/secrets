@@ -35,7 +35,7 @@ const storeOptions = MongoStore.create({
 
 app.use(session({
   name: 'sessionsForUsers',
-  // proxy: true,
+  proxy: true,
   secret: process.env.SESSION_SECRET,
   resave: true,
   saveUninitialized: true,
