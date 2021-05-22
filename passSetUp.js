@@ -27,7 +27,8 @@ passport.use('local-register', new LocalStrategy(
             User.create({
               name: req.body.name,
               email: email,
-              pass: hashPass
+              pass: hashPass,
+              profileImg: 'https://drive.google.com/file/d/1uVomoR0dQ1JwSKynxmQgSXGLI2428Wbs/view?usp=drivesdk'
             })
               .then(newuser => {
                 return done(null, newuser)
