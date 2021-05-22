@@ -74,7 +74,7 @@ passport.use(new GoogleStrategy(
   {
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: '/auth/google/redirect'
+    callbackURL: 'https://secrets-dt.herokuapp.com/auth/google/redirect'
   },
   (accesToken, refreshToken, profile, done) => {
     User.findOne({ googleId: profile.id }, function (err, user) {
@@ -123,7 +123,7 @@ passport.use(new GoogleStrategy(
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_APP_ID,
   clientSecret: process.env.FACEBOOK_APP_SECRET,
-  callbackURL: "/auth/facebook/redirect",
+  callbackURL: "https://secrets-dt.herokuapp.com/auth/facebook/redirect",
   profileFields: ['email', 'photos', 'gender']
 },
   function (accessToken, refreshToken, profile, done) {
