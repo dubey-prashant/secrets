@@ -19,13 +19,13 @@ router.get('/login', notAuthenticated, (req, res) => {
 
 // Register new User
 router.post('/register', notAuthenticated, passport.authenticate('local-register', {
-  successRedirect: '/secrets',
+  successRedirect: '/',
   failureRedirect: '/auth/register',
   failureFlash: true
 }))
 // Login existing user
 router.post('/login', notAuthenticated, passport.authenticate('local-login', {
-  successRedirect: '/secrets',
+  successRedirect: '/',
   failureRedirect: '/auth/login',
   failureFlash: true
 }))
