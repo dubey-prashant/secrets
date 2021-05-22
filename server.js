@@ -29,8 +29,7 @@ const storeOptions = MongoStore.create({
   mongoOptions: {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-  },
-  autoRemove: 1 / 60000
+  }
 })
 
 app.use(session({
