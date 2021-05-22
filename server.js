@@ -22,6 +22,7 @@ mongoose.connect(process.env.MONGO_DB_URL, { useNewUrlParser: true, useUnifiedTo
   }).catch(err => console.log(err))
 //mongoose connection end
 
+
 // MongoSessionStore 
 const storeOptions = MongoStore.create({
   mongoUrl: process.env.MONGO_DB_URL,
@@ -34,9 +35,10 @@ const storeOptions = MongoStore.create({
 
 app.use(session({
   name: 'sessionsForUsers',
+  proxy: true,
   secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false,
+  resave: true,
+  saveUninitialized: true,
   cookie: {
     secure: true,
     maxAge: 5 * 60 * 60 * 1000,    //  5 hours in milliseconds
